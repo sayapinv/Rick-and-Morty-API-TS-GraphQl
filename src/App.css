@@ -1,0 +1,93 @@
+.users_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.user{
+  flex-basis: 23%;
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: yellow;
+  margin: 5px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0px 3px 15px black;
+}
+
+img{
+  width: 100%;
+}
+
+.green{
+  color: green;
+}
+
+.red{
+  color: red;
+}
+
+.def{
+  color: gray;
+}
+
+
+
+.main{
+  text-align: center;
+}
+
+input{
+  width: 200px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+button{
+  height: 26px;
+  cursor: pointer;
+}
+
+body{
+  background-color: deepskyblue;
+  
+}
+
+.find_name_user{
+  margin-bottom: 20px;
+}
+
+h1{
+  color: white;
+}
+
+
+
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.error{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error p{
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+img{
+  color: aliceblue;
+}
+
+
+
+
