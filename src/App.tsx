@@ -38,7 +38,7 @@ const App: React.FC = () => {
   const classes = useStyles();
 
 
-  const debounce = (fn: () => void , ms:number): () => void => {
+  const debounce = (fn: (e: React.ChangeEvent<HTMLInputElement>) => void , ms:number): (args: React.ChangeEvent<HTMLInputElement>) => void => {
     let timeout: NodeJS.Timeout;
     return function(...args) {
       const fnCall = () => { fn.apply(null, args) }
@@ -50,17 +50,12 @@ const App: React.FC = () => {
     setName(e.target.value)
   }
 
-  // @ts-ignore
-  let onChange = debounce(onChange1, 500)
-
-
+  let onChange: (args: React.ChangeEvent<HTMLInputElement>) => void = debounce(onChange1, 500)
 
   return (
-    <>
-      <div className="main">
-        <div className="find_name_user">
-          <form className={classes.root} noValidate autoComplete="off">
-          {/* @ts-ignore */}
+    <div className="main">
+      <div className="find_name_user">
+        <form className={classes.root} noValidate autoComplete="off">
             <TextField id="outlined-basic" size="small" label="Search by name" variant="outlined" onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e)} />
           </form>
         </div>
@@ -69,11 +64,7 @@ const App: React.FC = () => {
           {!loading && characters?.info?.pages > 1 && <Pagination onChange={(_, num) => setPage(num)} page={page} count={characters?.info?.pages} color="primary" />}
         </div>
       </div>
-    </>
   );
-
-
-
 }
 
 export default App;
